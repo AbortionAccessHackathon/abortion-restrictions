@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/addons/p5.dom.js"></script>
+    </head>
+    <body>
+        <!-- Let's draw a chasm  that grows as you scroll down.  If it works, we'll put it in the final thing... -->
+
+        <script>
+//define globals here
+var w = 1024;
+var h = 768;
+var chasmDist = 0; //in pixels
+var CHASMMAX = 400; //in pixels
+var CHASMMIN = 0; //in pixels
+var CHASMWIDTH = 1024 * .75;
+var originCorner;
+var destCorner;
+var rot;
+
+var bgFill = color('hsb(198, 68%, 66%)');
+var plateauFill = color('hsb(198, 68%, 30%)');
+var cliffsideFill = color('hsb(198, 68%, 90%)');
+
+function setup(){
+    createCanvas(w, h);
+    CHASMWIDTH = w * .75;
+    originCorner = 0;
+    destCorner = 0;
+bgFill = color('hsb(198, 68%, 56%)');
+plateauFill = color('hsb(198, 68%, 70%)');
+cliffsideFill = color('hsb(198, 68%, 15%)');
+rot = -PI/12;
+}
+
+//Send float for how many pixels should divide the cliffs
+function updateChasm(dist){
+    chasmDist = dist;
+}
+
+function drawChasm(){
+//TODO: figure out how to fit chasm in center of viewport...
+    push();
+    noStroke();
+    //move to center and rotate
+    //Perspective rotation
+    translate(w/2, h/2)
+    fill(plateauFill);
+    rotate(rot)
+    push();
+    //Draw cliffside
+    translate(chasmDist, 0);
+    rotate(-rot)
+    fill(cliffsideFill);
+    rect(0, 0, CHASMWIDTH, h);
+    pop();
+    rect(chasmDist, 0, CHASMWIDTH, h);
+    rect(-w, 0, w, h);
+    push();
+    pop();
+    pop();
+}
+
+var originCorner;
+var destCorner;
+
+function draw(){
+    background(bgFill);
+    updateChasm(mouseY);
+    drawChasm();
+
+
+}
+        </script>
+    </body>
+</html>
