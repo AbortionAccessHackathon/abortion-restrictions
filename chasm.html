@@ -9,54 +9,65 @@
 
         <script>
 //define globals here
+var w = 1024;
+var h = 768;
 var chasmDist = 0; //in pixels
 var CHASMMAX = 400; //in pixels
 var CHASMMIN = 0; //in pixels
-var CHASMWIDTH = windowWidth * .75;
+var CHASMWIDTH = 1024 * .75;
+var originCorner;
+var destCorner;
+var rot;
+
+var bgFill = color('hsb(198, 68%, 66%)');
+var plateauFill = color('hsb(198, 68%, 30%)');
+var cliffsideFill = color('hsb(198, 68%, 90%)');
+
 function setup(){
-    createCanvas(windowWidth, windowHeight);
-    CHASMWIDTH = windowWidth * .75;
+    createCanvas(w, h);
+    CHASMWIDTH = w * .75;
+    originCorner = 0;
+    destCorner = 0;
+bgFill = color('hsb(198, 68%, 56%)');
+plateauFill = color('hsb(198, 68%, 70%)');
+cliffsideFill = color('hsb(198, 68%, 15%)');
+rot = -PI/12;
 }
 
-function updateChasm(){
-    chasmDist = mouseY;
+//Send float for how many pixels should divide the cliffs
+function updateChasm(dist){
+    chasmDist = dist;
 }
 
 function drawChasm(){
 //TODO: figure out how to fit chasm in center of viewport...
     push();
+    noStroke();
     //move to center and rotate
     //Perspective rotation
-    translate(width/4, -height/4)
-    rotate(PI/6);
-    fill(25, 200, 50);
-    rect(CHASMWIDTH/10, -height, CHASMWIDTH, height);
-//TODO draw lines straight down from corner to draw "down"
+    translate(w/2, h/2)
+    fill(plateauFill);
+    rotate(rot)
     push();
-    //move origin to right destination corner
-    translate(CHASMWIDTH/10, 0);
-    rotate(-PI/6);
-    line(0,0,0,height);
+    //Draw cliffside
+    translate(chasmDist, 0);
+    rotate(-rot)
+    fill(cliffsideFill);
+    rect(0, 0, CHASMWIDTH, h);
     pop();
+    rect(chasmDist, 0, CHASMWIDTH, h);
+    rect(-w, 0, w, h);
     push();
-    //move origin to left destination corner
-    translate(CHASMWIDTH *11/10, 0);
-    rotate(-PI/6);
-    line(0,0,0,height);
-    pop();
-    rect(CHASMWIDTH/10, 0 + chasmDist, CHASMWIDTH, height);
-    push();
-    //move origin to source right corner
-    translate(CHASMWIDTH *11/10, chasmDist);
-    rotate(-PI/6);
-    line(0,0,0,height);
     pop();
     pop();
 }
 
+var originCorner;
+var destCorner;
+
 function draw(){
-    background(255);
-    updateChasm();
+    background(bgFill);
+    updateChasm(mouseY);
     drawChasm();
 
 
