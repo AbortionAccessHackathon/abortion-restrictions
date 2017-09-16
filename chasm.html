@@ -3,44 +3,60 @@
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/addons/p5.dom.js"></script>
+        <script src="js/timeline.js"/>
     </head>
     <body>
         <!-- Let's draw a chasm  that grows as you scroll down.  If it works, we'll put it in the final thing... -->
 
         <script>
 //define globals here
+//w = canvas width
+//h = canvas height
 var w = 1024;
 var h = 768;
 var chasmDist = 0; //in pixels
 var CHASMMAX = 400; //in pixels
 var CHASMMIN = 0; //in pixels
-var CHASMWIDTH = 1024 * .75;
+var CHASMWIDTH = w * .75;
 var originCorner;
 var destCorner;
 var rot;
 
-var bgFill = color('hsb(198, 68%, 66%)');
-var plateauFill = color('hsb(198, 68%, 30%)');
-var cliffsideFill = color('hsb(198, 68%, 90%)');
+var bgFill;
+var plateauFill;
+var cliffsideFil;
 
+//one-time-setup
 function setup(){
     createCanvas(w, h);
     CHASMWIDTH = w * .75;
     originCorner = 0;
     destCorner = 0;
-bgFill = color('hsb(198, 68%, 56%)');
-plateauFill = color('hsb(198, 68%, 70%)');
-cliffsideFill = color('hsb(198, 68%, 15%)');
-rot = -PI/12;
+    //NOTE: change colors here, put any CSS/html valid color in quotes with color function
+    bgFill = color('hsb(198, 68%, 56%)');
+    plateauFill = color('hsb(198, 68%, 70%)');
+    cliffsideFill = color('hsb(198, 68%, 15%)');
+    //amount to rotate plateau
+    rot = -PI/12;
+}
+
+//draw loop
+function draw(){
+    drawChasm();
 }
 
 //Send float for how many pixels should divide the cliffs
+//Call this function from elsewhere in JS to update visualization
+//NOTE
+//Consider making a wrapper or function to lerp this as an animation
 function updateChasm(dist){
-    chasmDist = dist;
+    chasmDist = dist;  
+    drawChasm();
 }
 
 function drawChasm(){
 //TODO: figure out how to fit chasm in center of viewport...
+    background(bgFill);
     push();
     noStroke();
     //move to center and rotate
@@ -62,15 +78,11 @@ function drawChasm(){
     pop();
 }
 
-var originCorner;
-var destCorner;
-
-function draw(){
-    background(bgFill);
+//Demo function to show it move, on mouse click
+function mouseClicked(){
+    //background(bgFill);
     updateChasm(mouseY);
     drawChasm();
-
-
 }
         </script>
     </body>
