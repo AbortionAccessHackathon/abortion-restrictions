@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/addons/p5.dom.js"></script>
+    </head>
+    <body>
+        <!-- Let's draw a chasm  that grows as you scroll down.  If it works, we'll put it in the final thing... -->
+
+        <script>
+//define globals here
+var chasmDist = 0; //in pixels
+var CHASMMAX = 400; //in pixels
+var CHASMMIN = 0; //in pixels
+var CHASMWIDTH = windowWidth * .75;
+function setup(){
+    createCanvas(windowWidth, windowHeight);
+    CHASMWIDTH = windowWidth * .75;
+}
+
+function updateChasm(){
+    chasmDist = mouseY;
+}
+
+function drawChasm(){
+//TODO: figure out how to fit chasm in center of viewport...
+    push();
+    //move to center and rotate
+    //Perspective rotation
+    translate(width/4, -height/4)
+    rotate(PI/6);
+    fill(25, 200, 50);
+    rect(CHASMWIDTH/10, -height, CHASMWIDTH, height);
+//TODO draw lines straight down from corner to draw "down"
+    push();
+    //move origin to right destination corner
+    translate(CHASMWIDTH/10, 0);
+    rotate(-PI/6);
+    line(0,0,0,height);
+    pop();
+    push();
+    //move origin to left destination corner
+    translate(CHASMWIDTH *11/10, 0);
+    rotate(-PI/6);
+    line(0,0,0,height);
+    pop();
+    rect(CHASMWIDTH/10, 0 + chasmDist, CHASMWIDTH, height);
+    push();
+    //move origin to source right corner
+    translate(CHASMWIDTH *11/10, chasmDist);
+    rotate(-PI/6);
+    line(0,0,0,height);
+    pop();
+    pop();
+}
+
+function draw(){
+    background(255);
+    updateChasm();
+    drawChasm();
+
+
+}
+        </script>
+    </body>
+</html>
