@@ -1,139 +1,224 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Fira+Sans:400,400italic' rel='stylesheet' type='text/css'>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-    <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-    <script src="js/modernizr.js"></script> <!-- Modernizr -->
-    
-    <title>Horizontal Timeline | CodyHouse</title>
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Fira+Sans:400,400italic' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="fonts/stylesheet.css" type="text/css" charset="utf-8" /> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+	<title>Horizontal Timeline | CodyHouse</title>
 </head>
 <body>
-<section class="cd-horizontal-timeline">
-    <div class="timeline">
-        <div class="events-wrapper">
-            <div id="events" class="events">
-                <ol>
-                    <li><a href="#0" data-date="16/01/2014" class="selected">16 Jan</a></li>
-                    <li><a href="#0" data-date="28/02/2014">28 Feb</a></li>
-                    <li><a href="#0" data-date="20/04/2014">20 Mar</a></li>
-                    <li><a href="#0" data-date="20/05/2014">20 May</a></li>
-                    <li><a href="#0" data-date="09/07/2014">09 Jul</a></li>
-                    <li><a href="#0" data-date="30/08/2014">30 Aug</a></li>
-                    <li><a href="#0" data-date="15/09/2014">15 Sep</a></li>
-                    <li><a href="#0" data-date="01/11/2014">01 Nov</a></li>
-                    <li><a href="#0" data-date="10/12/2014">10 Dec</a></li>
-                    <li><a href="#0" data-date="19/01/2015">29 Jan</a></li>
-                    <li><a href="#0" data-date="03/03/2015">3 Mar</a></li>
-                </ol>
+<div class="wrapper">
 
-                <span class="filling-line" aria-hidden="true"></span>
-            </div> <!-- .events -->
-        </div> <!-- .events-wrapper -->
-            
-        <ul class="cd-timeline-navigation">
-            <li><a href="#0" class="prev inactive">Prev</a></li>
-            <li><a href="#0" class="next">Next</a></li>
-        </ul> <!-- .cd-timeline-navigation -->
-    </div> <!-- .timeline -->
-
-    <div id="events-content" class="events-content">
-        <ol>
-            <li class="selected" data-date="16/01/2014">
-                <h2>Horizontal Timeline</h2>
-                <em>January 16th, 2014</em>
-                <p> 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                </p>
-            </li>
-
-            <li data-date="28/02/2014">
-                <h2>Event title here</h2>
-                <em>February 28th, 2014</em>
-                <p> 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                </p>
-            </li>
-
-            <li data-date="20/04/2014">
-                <h2>Event title here</h2>
-                <em>March 20th, 2014</em>
-                <p> 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                </p>
-            </li>
-
-            <li data-date="20/05/2014">
-                <h2>Event title here</h2>
-                <em>May 20th, 2014</em>
-                <p> 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                </p>
-            </li>
-
-            <li data-date="09/07/2014">
-                <h2>Event title here</h2>
-                <em>July 9th, 2014</em>
-                <p> 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                </p>
-            </li>
-
-            <li data-date="30/08/2014">
-                <h2>Event title here</h2>
-                <em>August 30th, 2014</em>
-                <p> 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                </p>
-            </li>
-
-            <li data-date="15/09/2014">
-                <h2>Event title here</h2>
-                <em>September 15th, 2014</em>
-                <p> 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                </p>
-            </li>
-
-            <li data-date="01/11/2014">
-                <h2>Event title here</h2>
-                <em>November 1st, 2014</em>
-                <p> 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                </p>
-            </li>
-
-            <li data-date="10/12/2014">
-                <h2>Event title here</h2>
-                <em>December 10th, 2014</em>
-                <p> 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                </p>
-            </li>
-
-            <li data-date="19/01/2015">
-                <h2>Event title here</h2>
-                <em>January 19th, 2015</em>
-                <p> 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                </p>
-            </li>
-
-            <li data-date="03/03/2015">
-                <h2>Event title here</h2>
-                <em>March 3rd, 2015</em>
-                <p> 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                </p>
-            </li>
-        </ol>
-    </div> <!-- .events-content -->
+<section class="intro-panel">
+	<div class="intro-img">
+		<img src="img/intro-img.png" alt="Abortion movement">
+	</div>
+	<h1>With each passing year and each subsequent legislative session, it gets harder and harder to get an abortion in Texas.</h1>
+	<p><em>Roe v. Wade legalized abortion in 1973.</em> Abortion should be safe, legal, accessible in a woman’s community, and available without shame or pressure; but lawmakers have passed dozens of laws to move us backwards and widen the gap between a patient and their ability to get an abortion.</p>
+	<hr>
 </section>
-    
+
+<section class="cd-horizontal-timeline">
+	<div id="events-content" class="events-content">
+		<ol>
+			<li class="selected" data-date="01/01/1973">
+				<h2>1973</h2>
+				<p>
+					<em>Hyde Amendment.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+				<p class="law-title"><a href="#">Hyde Amendment, rider to the federal budget</a></p>
+				<p class="link social-share">
+					<a href="#">Share</a>
+					<a href="#">Next: 1982 Restriction ></a>
+				</p>
+
+			</li>
+
+			<li data-date="01/01/1976">
+				<h2>1976</h2>
+				<p>
+					<em>Hyde Amendment.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+				<p class="law-title"><a href="#">Hyde Amendment, rider to the federal budget</a></p>
+				<p class="link social-share">
+					<a href="#">Share</a>
+					<a href="#">Next: 1982 Restriction ></a>
+				</p>
+			</li>
+
+			<li data-date="01/01/1977">
+				<h2>1977</h2>
+				<p>
+					<em>Hyde Amendment.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+				<p class="law-title"><a href="#">Hyde Amendment, rider to the federal budget</a></p>
+				<p class="link social-share">
+					<a href="#">Share</a>
+					<a href="#">Next: 1982 Restriction ></a>
+				</p>
+			</li>
+
+			<li data-date="01/01/1985">
+				<h2>1985</h2>
+				<p>
+					<em>Hyde Amendment.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+				<p class="law-title"><a href="#">Hyde Amendment, rider to the federal budget</a></p>
+				<p class="link social-share">
+					<a href="#">Share</a>
+					<a href="#">Next: 1982 Restriction ></a>
+				</p>
+			</li>
+
+			<li data-date="01/01/1989">
+				<h2>1989</h2>
+				<p>
+					<em>Hyde Amendment.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+				<p class="law-title"><a href="#">Hyde Amendment, rider to the federal budget</a></p>
+				<p class="link social-share">
+					<a href="#">Share</a>
+					<a href="#">Next: 1982 Restriction ></a>
+				</p>
+			</li>
+
+			<li data-date="01/01/1999">
+				<h2>1999</h2>
+				<p>
+					<em>Hyde Amendment.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+				<p class="law-title"><a href="#">Hyde Amendment, rider to the federal budget</a></p>
+				<p class="link social-share">
+					<a href="#">Share</a>
+					<a href="#">Next: 1982 Restriction ></a>
+				</p>
+			</li>
+
+			<li data-date="01/01/2003">
+				<h2>2003</h2>
+				<p>
+					<em>Hyde Amendment.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+				<p class="law-title"><a href="#">Hyde Amendment, rider to the federal budget</a></p>
+				<p class="link social-share">
+					<a href="#">Share</a>
+					<a href="#">Next: 1982 Restriction ></a>
+				</p>
+			</li>
+
+			<li data-date="01/01/2005">
+				<h2>2005</h2>
+				<p>
+					<em>Hyde Amendment.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+				<p class="law-title"><a href="#">Hyde Amendment, rider to the federal budget</a></p>
+				<p class="link social-share">
+					<a href="#">Share</a>
+					<a href="#">Next: 1982 Restriction ></a>
+				</p>
+			</li>
+
+			<li data-date="01/01/2006">
+				<h2>2006</h2>
+				<p>
+					<em>Hyde Amendment.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+				<p class="law-title"><a href="#">Hyde Amendment, rider to the federal budget</a></p>
+				<p class="link social-share">
+					<a href="#">Share</a>
+					<a href="#">Next: 1982 Restriction ></a>
+				</p>
+			</li>
+
+			<li data-date="01/01/2011">
+				<h2>2011</h2>
+				<p>
+					<em>Hyde Amendment.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+				<p class="law-title"><a href="#">Hyde Amendment, rider to the federal budget</a></p>
+				<p class="link social-share">
+					<a href="#">Share</a>
+					<a href="#">Next: 1982 Restriction ></a>
+				</p>
+			</li>
+
+			<li data-date="01/01/2013">
+				<h2>2013</h2>
+				<p>
+					<em>Hyde Amendment.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+				<p class="law-title"><a href="#">Hyde Amendment, rider to the federal budget</a></p>
+				<p class="link social-share">
+					<a href="#">Share</a>
+					<a href="#">Next: 1982 Restriction ></a>
+				</p>
+			</li>
+
+			<li data-date="01/01/2017">
+				<h2>2017</h2>
+				<p>
+					<em>Hyde Amendment.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+				<p class="law-title"><a href="#">Hyde Amendment, rider to the federal budget</a></p>
+				<p class="link social-share">
+					<a href="#">Share</a>
+					<a href="#">Next: 1982 Restriction ></a>
+				</p>
+			</li>
+		</ol>
+	</div> <!-- .events-content -->
+
+
+	<div class="timeline">
+		<div class="timeline-pointers">
+			<p>Year</p>
+		</div>
+		<div class="events-wrapper">
+			<div id="events" class="events">
+				<ol>
+					<li><a href="#0" data-date="01/01/1973" class="selected">1973</a></li>
+					<li><a href="#0" data-date="01/01/1976">1976</a></li>
+					<li><a href="#0" data-date="01/01/1977">1977</a></li>
+					<li><a href="#0" data-date="01/01/1985">1985</a></li>
+					<li><a href="#0" data-date="01/01/1989">1989</a></li>
+					<li><a href="#0" data-date="01/01/1999">1999</a></li>
+					<li><a href="#0" data-date="01/01/2003">2003</a></li>
+					<li><a href="#0" data-date="01/01/2005">2005</a></li>
+					<li><a href="#0" data-date="01/01/2006">2006</a></li>
+					<li><a href="#0" data-date="01/01/2011">2011</a></li>
+					<li><a href="#0" data-date="01/01/2013">2013</a></li>
+					<li><a href="#0" data-date="01/01/2017">2017</a></li>
+				</ol>
+
+				<span class="filling-line" aria-hidden="true"></span>
+			</div> <!-- .events -->
+		</div> <!-- .events-wrapper -->
+		<ul class="cd-timeline-navigation">
+			<li><a href="#0" class="prev inactive">Prev</a></li>
+			<li><a href="#0" class="next">Next</a></li>
+		</ul> <!-- .cd-timeline-navigation -->
+
+		<div class="timeline-pointers">
+			<p>Policy</p>
+		</div>
+	</div> <!-- .timeline -->
+
+
+</section>
+
+</div><!-- .wrapper -->
+<footer>
+	<div class="footer-logo">
+		<img src="img/NIRH_logo.png" alt="NIRH Logo">
+	</div>
+</footer>
 <script src="js/jquery-2.1.4.js"></script>
 <script src="js/jquery.mobile.custom.min.js"></script>
 <script src="js/main.js"></script> <!-- Resource jQuery -->
