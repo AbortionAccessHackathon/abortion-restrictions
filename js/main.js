@@ -8,7 +8,7 @@ jQuery(document).ready(function($){
 		timelines.each(function(){
 			var timeline = $(this),
 				timelineComponents = {};
-			//cache timeline components 
+			//cache timeline components
 			timelineComponents['timelineWrapper'] = timeline.find('.events-wrapper');
 			timelineComponents['eventsWrapper'] = timelineComponents['timelineWrapper'].children('.events');
 			timelineComponents['fillingLine'] = timelineComponents['eventsWrapper'].children('.filling-line');
@@ -70,8 +70,8 @@ jQuery(document).ready(function($){
 		//retrieve translateX value of timelineComponents['eventsWrapper']
 		var translateValue = getTranslateValue(timelineComponents['eventsWrapper']),
 			wrapperWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', ''));
-		//translate the timeline to the left('next')/right('prev') 
-		(string == 'next') 
+		//translate the timeline to the left('next')/right('prev')
+		(string == 'next')
 			? translateTimeline(timelineComponents, translateValue - wrapperWidth + eventsMinDistance, wrapperWidth - timelineTotWidth)
 			: translateTimeline(timelineComponents, translateValue + wrapperWidth - eventsMinDistance);
 	}
@@ -84,7 +84,7 @@ jQuery(document).ready(function($){
 		if ( newContent.length > 0 ) { //if there's a next/prev event - show it
 			var selectedDate = timelineComponents['eventsWrapper'].find('.selected'),
 				newEvent = ( string == 'next' ) ? selectedDate.parent('li').next('li').children('a') : selectedDate.parent('li').prev('li').children('a');
-			
+
 			updateFilling(newEvent, timelineComponents['fillingLine'], timelineTotWidth);
 			updateVisibleContent(newEvent, timelineComponents['eventsContent']);
 			newEvent.addClass('selected');
@@ -128,7 +128,7 @@ jQuery(document).ready(function($){
 	}
 
 	function setDatePosition(timelineComponents, min) {
-		for (i = 0; i < timelineComponents['timelineDates'].length; i++) { 
+		for (i = 0; i < timelineComponents['timelineDates'].length; i++) {
 		    var distance = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][i]),
 		    	distanceNorm = Math.round(distance/timelineComponents['eventsMinLapse']) + 2;
 		    timelineComponents['timelineEvents'].eq(i).css('left', distanceNorm*min+'px');
@@ -143,7 +143,7 @@ jQuery(document).ready(function($){
 		timelineComponents['eventsWrapper'].css('width', totalWidth+'px');
 		updateFilling(timelineComponents['eventsWrapper'].find('a.selected'), timelineComponents['fillingLine'], totalWidth);
 		updateTimelinePosition('next', timelineComponents['eventsWrapper'].find('a.selected'), timelineComponents);
-	
+
 		return totalWidth;
 	}
 
@@ -203,24 +203,33 @@ jQuery(document).ready(function($){
 
 	//based on http://stackoverflow.com/questions/542938/how-do-i-get-the-number-of-days-between-two-dates-in-javascript
 	function parseDate(events) {
-		var dateArrays = [];
-		events.each(function(){
-			var singleDate = $(this),
-				dateComp = singleDate.data('date').split('T');
-			if( dateComp.length > 1 ) { //both DD/MM/YEAR and time are provided
-				var dayComp = dateComp[0].split('/'),
-					timeComp = dateComp[1].split(':');
-			} else if( dateComp[0].indexOf(':') >=0 ) { //only time is provide
-				var dayComp = ["2000", "0", "0"],
-					timeComp = dateComp[0].split(':');
-			} else { //only DD/MM/YEAR
-				var dayComp = dateComp[0].split('/'),
-					timeComp = ["0", "0"];
-			}
-			var	newDate = new Date(dayComp[2], dayComp[1]-1, dayComp[0], timeComp[0], timeComp[1]);
-			dateArrays.push(newDate);
-		});
-	    return dateArrays;
+		// var dateArrays = [];
+		// events.each(function(){
+		// 	var singleDate = $(this),
+		// 		dateComp = singleDate.data('date').split('T');
+		// 	if( dateComp.length > 1 ) { //both DD/MM/YEAR and time are provided
+		// 		var dayComp = dateComp[0].split('/'),
+		// 			timeComp = dateComp[1].split(':');
+		// 	} else if( dateComp[0].indexOf(':') >=0 ) { //only time is provide
+		// 		var dayComp = ["2000", "0", "0"],
+		// 			timeComp = dateComp[0].split(':');
+		// 	} else { //only DD/MM/YEAR
+		// 		var dayComp = dateComp[0].split('/'),
+		// 			timeComp = ["0", "0"];
+		// 	}
+		// 	var	newDate = new Date(dayComp[2], dayComp[1]-1, dayComp[0], timeComp[0], timeComp[1]);
+		// 	dateArrays.push(newDate);
+		// });
+	  //   return dateArrays;
+			// console.log()
+			// events.each(function(res) {
+			// 	console.log(res)
+			// })
+			console.log(events);
+
+			// for (day of events) {
+			// 	console.log(day);
+			// }
 	}
 
 	function daydiff(first, second) {
@@ -230,7 +239,7 @@ jQuery(document).ready(function($){
 	function minLapse(dates) {
 		//determine the minimum distance among events
 		var dateDistances = [];
-		for (i = 1; i < dates.length; i++) { 
+		for (i = 1; i < dates.length; i++) {
 		    var distance = daydiff(dates[i-1], dates[i]);
 		    dateDistances.push(distance);
 		}
