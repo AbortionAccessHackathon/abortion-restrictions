@@ -8,7 +8,7 @@ d3.csv("data/timeline-policies-tx.csv", function(data) {
     }
 
     // construct the timeline
-    document.getElementById('events').appendChild(makeOL(data, "YearString"));
+    // document.getElementById('events').appendChild(makeOL(data, "YearString"));
     console.log(document.getElementById('events'));
     // construct the policies
     document.getElementById('events-content').appendChild(makeOLAgain(data, "Full description"));
