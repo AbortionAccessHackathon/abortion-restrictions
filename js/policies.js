@@ -4,7 +4,10 @@ d3.csv("data/timeline-policies-tx.csv", function(data) {
 
     // Convert dates to dates that the timeline will understand
     for(var i=0;i<data.length;i++){
-        data[i].YearString="01/01/"+data[i].Year;
+        //assign a randomish date to prevent collisions.  Should work for this dataset.
+        let datestring = "0" + (i % 10).toString();
+
+        data[i].YearString= datestring + "/01/"+data[i].Year;
     }
 
     // construct the timeline
