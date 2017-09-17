@@ -1,4 +1,5 @@
 jQuery(document).ready(function($){
+    populatePolicies();
 	var timelines = $('.cd-horizontal-timeline'),
 		eventsMinDistance = 30;
 
