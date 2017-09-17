@@ -13,7 +13,8 @@ body {
   font-size: 1.6rem;
   font-family: 'work_sanslight';, sans-serif;
   color: #fff;
-  background-color: #3781D8;
+  /*background-color: #3781D8;*/
+    background-color: #314358;
 }
 
 a {
@@ -117,7 +118,7 @@ Timeline
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: #314358;
+  background-color: aqua;
   -webkit-transform: scaleX(0);
   -moz-transform: scaleX(0);
   -ms-transform: scaleX(0);
@@ -139,7 +140,8 @@ Timeline
   text-align: center;
   font-size: 1.3rem;
   padding-bottom: 30px;
-  color: #383838;
+  /*color: #383838;*/
+    color: #fff;
   /* fix bug on Safari - text flickering while timeline translates */
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -178,10 +180,9 @@ Timeline
 }
 .cd-horizontal-timeline .events a.selected::after {
   background-color: #fff;
-  border-color: #314358;
-  /*width: 15px;
-  height: 15px;*/
-  /*border: 10px solid red;*/
+  border-color: #fff;
+  /*border-color: #314358;*/
+
 }
 .cd-horizontal-timeline .events a.older-event::after {
   border-color: #314358;
@@ -359,7 +360,7 @@ Timeline
 }
 
 .container {
-  /*border: 1px solid yellow; */  
+  /*border: 1px solid yellow; */
   position: absolute;
   left: 0;
   right: 0;
