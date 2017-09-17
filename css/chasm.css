@@ -13,7 +13,7 @@
   translateY(-61.1vh)
   ;
   transition: transform .2s ease-in-out;
-  z-index: 999;
+  z-index: 998;
 }
 
 #chasm-top {

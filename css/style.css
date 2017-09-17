@@ -201,7 +201,7 @@ Timeline
   /* these are the left/right arrows to navigate the timeline */
   position: absolute;
   z-index: 1;
-  top: 50%;
+  top: 65%;
   bottom: auto;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -267,12 +267,14 @@ Timeline
 
 .cd-horizontal-timeline .events-content {
   position: relative;
-  width: 100%;
+  width: 75%;
   margin: 2em 0;
   overflow: hidden;
   -webkit-transition: height 0.4s;
   -moz-transition: height 0.4s;
   transition: height 0.4s;
+  margin: 0 auto;
+  z-index: 999;
 }
 .cd-horizontal-timeline .events-content li {
   position: absolute;
