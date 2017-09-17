@@ -4,26 +4,29 @@ d3.csv("data/timeline-policies-tx.csv", function(data) {
 
     // Convert dates to dates that the timeline will understand
     for(var i=0;i<data.length;i++){
-        data[i].Year="01/01/"+data[i].Year;
+        data[i].YearString="01/01/"+data[i].Year;
     }
 
     // construct the timeline
-    document.getElementById('events').appendChild(makeOL(data, "Year"));
+    // document.getElementById('events').appendChild(makeOL(data, "YearString"));
     console.log(document.getElementById('events'));
     // construct the policies
     document.getElementById('events-content').appendChild(makeOLAgain(data, "Full description"));
     console.log(data);
 
+    // convert into nums 
+    for(var i=0;i<data.length;i++){
+        data[i].Year=parseInt(data[i].Year);
+    }
 
+    var minYear = d3.min(data, function(d) {
+        return d.Year;
+    });
+    var maxYear = d3.max(data, function(d) {
+        return d.Year;
+    });
 
-    // var minYear = d3.min(data, function(d) {
-    //     return d.Year;
-    // });
-    // var maxYear = d3.max(data, function(d) {
-    //     return d.Year;
-    // });
-
-    // // Based on: https://codepen.io/DougManuel/full/avRyMg
+    // Based on: https://codepen.io/DougManuel/full/avRyMg
     // d3.select('#events-slider').call(
     //     d3.slider().scale(d3.time
     //         .scale()
@@ -33,6 +36,21 @@ d3.csv("data/timeline-policies-tx.csv", function(data) {
     //         .value(new Date(minYear,1,1)
     //     )
     // );
+
+    var testData = [
+        {label: "person a", times: [
+            {"starting_time": 1355752800000, "ending_time": 1355759900000},
+            {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
+            {label: "person b", times: [
+            {"starting_time": 1355759910000, "ending_time": 1355761900000}]},
+            {label: "person c", times: [
+            {"starting_time": 1355761910000, "ending_time": 1355763910000}]}
+    ];
+
+    var chart = d3.timeline();
+
+    var svg = d3.select("#events-slider").append("svg").attr("width", 500)
+      .datum(testData).call(chart);
 });
 
 // Add the contents of options[0] to #foo:
@@ -74,14 +92,14 @@ function makeOLAgain(array, key) {
     for(var i = 0; i < array.length; i++) {
         // Create the list item:
         var item = document.createElement('li');
-        item.setAttribute("data-date", array[i]["Year"]);
+        item.setAttribute("data-date", array[i]["YearString"]);
 
         // Make Content
         var h2 = document.createElement('h2');
-        h2.appendChild(document.createTextNode(array[i]["Law Title"]));
+        h2.appendChild(document.createTextNode(array[i]["Year"]));
 
         var em = document.createElement('em');
-        em.appendChild(document.createTextNode(array[i]["Year"]));
+        em.appendChild(document.createTextNode(array[i]["Law Title"]));
         
         var p = document.createElement('p');
         p.appendChild(document.createTextNode(array[i][key]));
