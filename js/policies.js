@@ -11,10 +11,10 @@ d3.csv("data/timeline-policies-tx.csv", function(data) {
     }
     // construct the timeline
     // document.getElementById('events').appendChild(makeOL(data, "YearString"));
-    console.log(document.getElementById('events'));
+    
     // construct the policies
     document.getElementById('events-content').appendChild(makeOLAgain(data, "Full description"));
-
+console.log(document.getElementById('events-content'));
     // convert into nums
     for(var i=0;i<data.length;i++){
         data[i].Year=parseInt(data[i].Year);
@@ -91,8 +91,12 @@ function makeOLAgain(array, key) {
     var list = document.createElement('ol');
 
     for(var i = 0; i < array.length; i++) {
+
         // Create the list item:
         var item = document.createElement('li');
+if(i==0){
+        item.setAttribute("class", "selected");        
+        }
         item.setAttribute("data-date", array[i]["YearString"]);
 
         // Make Content
@@ -108,7 +112,7 @@ function makeOLAgain(array, key) {
         item.appendChild(h2);
         item.appendChild(em);
         item.appendChild(p);
-
+        
         // Add it to the list:
         list.appendChild(item);
     }
