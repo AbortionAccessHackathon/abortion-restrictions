@@ -5,17 +5,15 @@ d3.csv("data/timeline-policies-tx.csv", function(data) {
     // Convert dates to dates that the timeline will understand
     for(var i=0;i<data.length;i++){
         //assign a randomish date to prevent collisions.  Should work for this dataset.
-        let datestring = "0" + (i % 10).toString();
-
-        data[i].YearString= datestring + "/01/"+data[i].Year;
+        // let datestring = "1" + (i % 10).toString();
+        // data[i].YearString= "/01/"+datestring+data[i].Year;
+        data[i].YearString= "01/01/"+data[i].Year;
     }
-
     // construct the timeline
     // document.getElementById('events').appendChild(makeOL(data, "YearString"));
     console.log(document.getElementById('events'));
     // construct the policies
     document.getElementById('events-content').appendChild(makeOLAgain(data, "Full description"));
-    console.log(data);
 
     // convert into nums
     for(var i=0;i<data.length;i++){
