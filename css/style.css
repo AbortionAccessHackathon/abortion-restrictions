@@ -42,6 +42,9 @@ Timeline
 -------------------------------- */
 .timeline-pointers p{color: #314358;font-family: 'roboto_monomedium';}
 .cd-horizontal-timeline {
+  height: 100vh;
+  z-index: 999;
+  position: absolute;
   opacity: 0;
   margin: 2em auto;
   -webkit-transition: opacity 0.2s;

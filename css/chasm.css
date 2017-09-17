@@ -1,21 +1,19 @@
 /*chasm styles*/
 /*add mobile responsiveness at another hackathon*/
 .container {
-  height: 120vh;
+  height: 130vh;
   overflow: hidden;
 }
-
-/*html, body {margin: 0;}*/
-/*container {margin: 0; height: 100%; overflow: hidden}*/
 
 #person {
   position: absolute;
   margin-left: 400px;
   transform:
-  translateY(-45vh)
-  translateX(-5vh);
-  z-index: 999;
+  translateX(30vh)
+  translateY(-61.1vh)
+  ;
   transition: transform .2s ease-in-out;
+  z-index: 999;
 }
 
 #chasm-top {
@@ -25,6 +23,7 @@
   background-color: #4a8fe3;
   margin-left: 60vh;
   padding-top: 10vh;
+
   transform: translate(50vh)
   translateY(5vh)
   translateX(30vh)
@@ -32,15 +31,14 @@
   skewX(40deg)
 ;
   overflow-y: hidden;
-  z-index: 999;
+  z-index: 998;
 }
 
 #chasm-cliff {
   position: relative;
-  margin-top: -49.8vh;
   width: 150vh;
   height: 70vh;
-
+  margin-top: -49.8vh;
   background: linear-gradient(135deg, #69abec, #559ae6);
 ;
   transform:
@@ -52,15 +50,14 @@
 
 
 #chasm-bottom {
-  transition: transform .2s ease-in-out;
-
+  width: 200vh;
+  height: 100vh;
   transform:
-  translateX(-80vh)
-  translateY(-24.5vh)
+  translateX(-45vh)
+  translateY(-40.59vh)
   rotate(-25deg)
   skewX(40deg);
   position: relative;
   background-color: #4a8fe3;
-  width: 200vh;
-  height: 100vh;
+  transition: transform .2s ease-in-out;
 }
