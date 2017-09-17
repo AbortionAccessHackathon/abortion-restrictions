@@ -207,6 +207,7 @@ jQuery(document).ready(function($){
 		events.each(function(){
 			var singleDate = $(this),
 				dateComp = singleDate.data('date').split('T');
+				console.log(dateComp);
 			if( dateComp.length > 1 ) { //both DD/MM/YEAR and time are provided
 				var dayComp = dateComp[0].split('/'),
 					timeComp = dateComp[1].split(':');
