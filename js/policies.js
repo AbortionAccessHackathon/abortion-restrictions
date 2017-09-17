@@ -14,7 +14,7 @@ d3.csv("data/timeline-policies-tx.csv", function(data) {
     document.getElementById('events-content').appendChild(makeOLAgain(data, "Full description"));
     console.log(data);
 
-    // convert into nums 
+    // convert into nums
     for(var i=0;i<data.length;i++){
         data[i].Year=parseInt(data[i].Year);
     }
@@ -47,7 +47,7 @@ d3.csv("data/timeline-policies-tx.csv", function(data) {
             {"starting_time": 1355761910000, "ending_time": 1355763910000}]}
     ];
 
-    var chart = d3.timeline();
+    //var chart = d3.timeline();
 
     var svg = d3.select("#events-slider").append("svg").attr("width", 500)
       .datum(testData).call(chart);
@@ -100,14 +100,14 @@ function makeOLAgain(array, key) {
 
         var em = document.createElement('em');
         em.appendChild(document.createTextNode(array[i]["Law Title"]));
-        
+
         var p = document.createElement('p');
         p.appendChild(document.createTextNode(array[i][key]));
-        
+
         item.appendChild(h2);
         item.appendChild(em);
         item.appendChild(p);
-        
+
         // Add it to the list:
         list.appendChild(item);
     }
@@ -117,7 +117,7 @@ function makeOLAgain(array, key) {
 }
 
 function makeP(item, element, array, key) {
-    // Create the details item 
+    // Create the details item
     var e = document.createElement(element);
     return e;
 }
@@ -128,4 +128,4 @@ function makeLink(item, element, array, key) {
     a.setAttribute("href", "#0");
 }
 
-        
+
