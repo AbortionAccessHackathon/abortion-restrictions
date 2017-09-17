@@ -8,7 +8,7 @@ let transformIncrementY = 2.3;
 $("body").keydown(function(e) {
 
   if (personX > -20) {
-    if(e.keyCode == 37) { // left
+    if(e.keyCode == 39) { // right
       x-=transformIncrementX;
       y+=transformIncrementY;
       personX -=transformIncrementX;
@@ -22,8 +22,8 @@ $("body").keydown(function(e) {
     }
   }
 
-  if (personX < 35) {
-    if(e.keyCode == 39) { // right
+  if (personX < 30) { // leave a small space bn the chasms
+    if(e.keyCode == 37) { // left
     x+=transformIncrementX;
     y-=transformIncrementY;
     personX += transformIncrementX;
