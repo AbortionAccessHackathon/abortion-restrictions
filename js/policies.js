@@ -52,7 +52,7 @@ function makeOLAgain(array, key) {
         h2.appendChild(document.createTextNode(array[i]["Law Title"]));
 
         var em = document.createElement('em');
-        em.appendChild(document.createTextNode(array[i][key]));
+        em.appendChild(document.createTextNode(array[i]["Year"]));
         
         var p = document.createElement('p');
         p.appendChild(document.createTextNode(array[i][key]));
