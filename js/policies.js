@@ -1,20 +1,38 @@
-// Based on: https://codepen.io/DougManuel/full/avRyMg
-d3.select('#events-slider').call(
-    d3.slider().scale(d3.time
-        .scale()
-        .domain([new Date(1984,1,1), new Date(2014,1,1)]))
-        .axis(d3.svg.axis())
-        .snap(true)
-        .value(new Date(2000,1,1)
-    )
-);
+
 
 d3.csv("data/timeline-policies-tx.csv", function(data) {
+
+    // Convert dates to dates that the timeline will understand
+    for(var i=0;i<data.length;i++){
+        data[i].Year="01/01/"+data[i].Year;
+    }
+
     // construct the timeline
     document.getElementById('events').appendChild(makeOL(data, "Year"));
+    console.log(document.getElementById('events'));
     // construct the policies
-    console.log(document.getElementById('events-content'));
     document.getElementById('events-content').appendChild(makeOLAgain(data, "Full description"));
+    console.log(data);
+
+
+
+    // var minYear = d3.min(data, function(d) {
+    //     return d.Year;
+    // });
+    // var maxYear = d3.max(data, function(d) {
+    //     return d.Year;
+    // });
+
+    // // Based on: https://codepen.io/DougManuel/full/avRyMg
+    // d3.select('#events-slider').call(
+    //     d3.slider().scale(d3.time
+    //         .scale()
+    //         .domain([new Date(minYear,1,1), new Date(maxYear,1,1)]))
+    //         .axis(d3.svg.axis())
+    //         .snap(true)
+    //         .value(new Date(minYear,1,1)
+    //     )
+    // );
 });
 
 // Add the contents of options[0] to #foo:
@@ -77,7 +95,6 @@ function makeOLAgain(array, key) {
     }
 
     // Finally, return the constructed list:
-    console.log(list);
     return list;
 }
 
