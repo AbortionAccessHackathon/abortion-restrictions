@@ -49,8 +49,8 @@ d3.csv("data/timeline-policies-tx.csv", function(data) {
 
     //var chart = d3.timeline();
 
-    var svg = d3.select("#events-slider").append("svg").attr("width", 500)
-      .datum(testData).call(chart);
+    // var svg = d3.select("#events-slider").append("svg").attr("width", 500)
+    //   .datum(testData).call(chart);
 });
 
 // Add the contents of options[0] to #foo:
