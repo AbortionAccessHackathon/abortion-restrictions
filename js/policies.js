@@ -1,3 +1,14 @@
+// Based on: https://codepen.io/DougManuel/full/avRyMg
+d3.select('#events-slider').call(
+    d3.slider().scale(d3.time
+        .scale()
+        .domain([new Date(1984,1,1), new Date(2014,1,1)]))
+        .axis(d3.svg.axis())
+        .snap(true)
+        .value(new Date(2000,1,1)
+    )
+);
+
 d3.csv("data/timeline-policies-tx.csv", function(data) {
     // construct the timeline
     document.getElementById('events').appendChild(makeOL(data, "Year"));
@@ -52,7 +63,7 @@ function makeOLAgain(array, key) {
         h2.appendChild(document.createTextNode(array[i]["Law Title"]));
 
         var em = document.createElement('em');
-        em.appendChild(document.createTextNode(array[i][key]));
+        em.appendChild(document.createTextNode(array[i]["Year"]));
         
         var p = document.createElement('p');
         p.appendChild(document.createTextNode(array[i][key]));
