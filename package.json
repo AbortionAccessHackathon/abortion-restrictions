@@ -1,0 +1,13 @@
+{
+  "name": "abortion-restrictions",
+  "version": "1.0.0",
+  "description": "TODO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server --files '.'"
+
+  },
+  "author": "",
+  "license": "ISC"
+}
